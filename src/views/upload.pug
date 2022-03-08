@@ -1,0 +1,9 @@
+extends base.pug
+
+block content  
+    h2 Upload Video
+    form(method="POST")
+        input(placeholder="Title" ,name="title", required, type="text")
+        input(placeholder="Description", name="description", required, type="text")
+        input(placeholder="Hashtags, seperated by comma", name="hashtags", required, type="text")
+        input(value="Upload", type="submit")
