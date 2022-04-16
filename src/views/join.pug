@@ -12,7 +12,8 @@ block content
         input(name="location" , placeholder="location" type="test", required)  
         input(type="submit", placeholder="submit" value="Join")
     
-    hr 
-    div     
+        include partials/social-login
+
+    div.auth-switch
         span Already have an account? 
         a(href="/login") Login now &rarr;

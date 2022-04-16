@@ -1,0 +1,16 @@
+extends base.pug
+
+block content
+    img(src="/"+loggedInUser.avatarUrl, width="100px", height="100px")
+    form(method="POST", enctype="multipart/form-data").edit-profile__form
+        label(for="avatar") Avatar
+        input(id="avatar", type="file", name="avatar", accept="image/*")
+        input(name="name" , placeholder="name" type="test", required, value=loggedInUser.name)  
+        input(name="email" , placeholder="email" type="email", required, value=loggedInUser.email) 
+        input(name="username" , placeholder="username" type="test", required, value=loggedInUser.username) 
+        input(name="location" , placeholder="location" type="test", required, value=loggedInUser.location)  
+        input(type="submit", value="Update Profile" )
+        
+        if !loggedInUser.socialOnly
+            div.edit-profile__password
+                a(href="change-password") Change Password &rarr;
